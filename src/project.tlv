@@ -43,7 +43,7 @@
 
 \TLV calc()
    |calc
-      @0
+      @1
          $reset = *reset;
          $val1[7:0] = >>1$out ;       //>> is used to fetch the last cycle value i.e. >>1 last 1st cycle and >>2 means 2nd last cycle value.
          $val2[7:0] = { 4'b0, *ui_in[3:0] } ;
