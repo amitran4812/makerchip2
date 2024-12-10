@@ -53,9 +53,12 @@
          $div[7:0] = $val1[7:0] / $val2[7:0] ;
          $op[1:0] = *ui_in[5:4] ;
          $equals_in = *ui_in[7];
+         $valid = $equals_in && ! 1>>$equals_in;
          $out[10:0] = 
             $reset
              ? 8'd0 :
+            ! $valid
+             ? >>1$out :
             $op[1:0] == 2'd0
              ? $sum :
             $op[1:0] == 2'd1
